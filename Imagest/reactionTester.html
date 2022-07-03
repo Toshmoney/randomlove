@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Tester</title>
+    <style>
+        #shapes{
+            background: red;
+            height: 200px;
+            width: 200px;
+            display: none;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <p>Your time is: <span id="time"></span></p>
+    <div id="shapes"></div>
+
+    <script>
+        var start = new Date().getTime();
+        function randomColor(){
+            var letter = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i =0; i<6; i++){
+                color += letter[Math.floor(Math.random() *16)];
+            }return color;
+        }
+        function myTimeTaken(){
+            var top = Math.random() * 400;
+            var left = Math.random() * 400;
+            var width = Math.random() * (200)+ 100;
+            // var height = Math.random() * 200;
+            if (Math.random() > 0.5){
+                document.getElementById("shapes").style.borderRadius = "50%";
+            }else{
+                document.getElementById("shapes").style.borderRadius = "0";
+            }
+            // document.getElementById("shapes").style.height = height +"px";
+            document.getElementById("shapes").style.width = width +"px";
+            document.getElementById("shapes").style.backgroundColor = randomColor();
+
+            document.getElementById("shapes").style.top = top +"px";
+            document.getElementById("shapes").style.left = left +"px";
+            document.getElementById("shapes").style.display = "block";
+            start = new Date().getTime();
+        }
+
+        function makeappear(){
+            setTimeout(myTimeTaken, Math.random() * 3000);
+        }
+        makeappear();
+        var start = new Date().getTime();
+        document.getElementById("shapes").onclick = function(){
+            var shapes = document.getElementById("shapes");
+            var randomShapes = Math.random() * shapes;
+            document.getElementById("shapes").style.display = "none";
+            var end = new Date().getTime();
+            var timeTaken = (end - start) / 1000 ;
+            document.getElementById("time").innerHTML = timeTaken + "s";
+            makeappear();
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

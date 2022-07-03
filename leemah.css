@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(197, 155, 155, 0.781);
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+body>h2{
+    color: #87cf19da;
+    font-family: sans-serif;
+    border: 2px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    width: 400px;
+    margin: 10px;
+}
+h2:hover{
+    background-color: #87cf19da;
+    color: #ffffff;
+    font-family: serif;
+    border-radius: 10px;
+}
+#logo{
+    text-decoration: none;
+    color: #000000;
+    font: bold;
+}
+.textsec{
+    padding: 5px 50px 0px 50px;
+    margin: 0%;
+}
+.inputsec{
+    margin-top: 50px;
+    padding: 0 50px 40px 20px;
+}
+#compatible{
+    padding: 10px 50px 10px 20px;
+    border: 5px solid gray;
+    border-top-style: dashed;
+    border-top-color: rgb(0, 0, 253);
+    display: none;
+}
+.st{
+    border-radius: 1.5rem;
+    background-color: rgb(171, 171, 189);
+    color: #ffffff;
+    border-color: chartreuse;
+}
+input{
+    width:100%;
+}
+
+@media (max-width: 900px) {
+    .st{
+        width: 50%;
+    }
+    #check{
+        width: 40%;
+    }
+    #dark{
+        width: 40%;
+    }
+}
+#check{
+    padding: 0.5rem;
+}
+#dark{
+    padding: 0.5rem;
+    color: #fff;
+    background-color: black;
+    border-radius: 1.5rem;
+    margin: -3.5rem 0 2rem 1.5rem;
+}
+#dark:hover{
+    background-color: #fff;
+    color: #000;
+    border-color: chartreuse;
+}
+.bd{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+.co{
+    background-color: gray;
+}
+#increament{
+    width: 2rem;
+}
+#decreament{
+    width: 2rem;
+}
+
+#counter{
+    width: 5rem;
+}

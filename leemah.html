@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leemah Solution</title>
+    <!--Favicon-->
+    <link rel="icon" href="./Images/toshconsult.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="./font-awesome/css/all.min.css">
+    <!--Basic Css-->
+    <link rel="stylesheet" href="leemah.css">
+</head>
+<body id="bd">
+    <!-- Navigation Section-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a href="#" class="nav-brand" id="logo">LeemahSolutions</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#res_nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse section-->
+            <div class="collapse navbar-collapse" id="res_nav">
+                <ul class="nav nav-tabs navbar-bar ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="https://wa.me/2348103856846" class="nav-link active">Buy me coffee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://wa.me/2348103856846" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#login" class="nav-link">Login</a>
+                    </li>
+                </ul>
+            </div> <!-- End of collapse section-->
+        </div><!-- End of container-->
+    </nav>   <!-- End of Navigation Section-->
+
+    <!-- Home Section-->
+    <header id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xl-2"></div>
+                <div class="col-md-7 col-xl-5 d-none d-md-block">
+                    <h1>Welcome to LeemahSolutions</h1>
+                    <p>Predict your love destiny.. </p>
+                </div>
+                <div class="vector"></div>
+            </div> <!-- End of Row-->
+        </div>  <!-- End of container-->
+    </header>  <!-- End of Home section-->
+    <div class="loveCal">
+        <div class="textsec">
+            <p style="font-size: 17.3px;">Hey! Welcome to leemah technologies marriage detector web app.</p>
+            <p>This software will take your name, your partner's name and tell you if you both match each other or not.</p>
+            <p>Now let's get started!</p>
+        </div>
+        <div class="inputsec">
+            <p>What is your name? <input type="text" id="yourName" class="st" onmouseover="over()" onmouseout="out()"></p>
+            <p>What is your partners' name? <input type="text" id="partners" class="st" onmouseover="over1()" onmouseout="out1()"></p>
+            <button style="color: rgb(0, 0, 253);" id="check" class="st" onmouseover="over2()" onmouseout="out2()">Check if compatible</button>
+        </div>
+        <button id="dark">Switch background color</button>
+        <p id="compatible"></p>
+    </div>
+    <p>Enter your preffered count:<input id="tesbiya" type="text"></p>
+        <p><button id="alert">Alert me</button></p>
+    <div class="co">
+        <button id="increament">+</button>
+        <span id="counter">0</span>
+        <button id="decreament">-</button>
+    </div>
+    <p id="user"></p>
+    <!-- <script src="./bootstrap/js/bootstrap.min.js">
+    </script> -->
+    
+    <script>
+        var num = document.getElementById("tesbiya");
+        var alert = document.getElementById("alert");
+        var incr = document.getElementById("increament");
+        var count = document.getElementById("counter");
+        var decr = document.getElementById("decreament");
+
+       document.getElementById("alert").addEventListener("click", food);
+       function food(){
+        console.log("Hello")
+       }
+        document.getElementById("increament").onclick = function inc(){
+            count.innerHTML = Number(count.innerHTML) +1;
+            if(count.innerText == num.value){
+                alert("Stop! you set to stop when you reach " + num)
+            }else{
+                count.innerText;
+            }
+        }
+
+        document.getElementById("decreament").onclick = function dec(){
+            count.innerText = Number(count.innerText) - 1;
+            if(count.innerText == -5){
+                alert("Maximum reached!")
+            }
+        }
+        function bdb(){
+            var letters = "0123456789abcdef".split('');
+            var color = "#";
+            for (i =0; i<6; i++){
+                color += letters[Math.floor(Math.random()*16)]
+            }return color;
+        }
+        // **.....Darkmode function.......**
+        var bd = document.body;
+        document.querySelector("#dark").onclick = function () {
+            // bd.classList.toggle("bd");
+            
+            bd.style.backgroundColor = bdb();
+        }
+
+        function over(){
+            document.getElementById("yourName").style.backgroundColor = "rgb(0, 0, 253)";
+            document.getElementById("yourName").style.color = "white";
+        }
+        function out(){
+            document.getElementById("yourName").style.backgroundColor = "white";
+            document.getElementById("yourName").style.color = "green";
+        }
+        function over1(){
+            document.getElementById("partners").style.backgroundColor = "rgb(0, 0, 253)";
+            document.getElementById("partners").style.color = "white";
+        }
+        function out1(){
+            document.getElementById("partners").style.backgroundColor = "white";
+            document.getElementById("partners").style.color = "green";
+        }
+        function over2(){
+            document.getElementById("check").style.backgroundColor = "white";
+            document.getElementById("check").style.color = "blue";
+        }
+        function out2(){
+            document.getElementById("check").style.backgroundColor = "green";
+            document.getElementById("check").style.color = "white";
+        }
+        document.getElementById("check").addEventListener("click", checkMe);
+        function checkMe(){
+            var firstName = document.querySelector("#yourName").value;
+            var second = document.querySelector("#partners").value;
+            var randomLove = Math.floor(Math.random() * 100)+1;
+            if(firstName == "" || second == ""){
+                document.querySelector("#compatible").style.display = "block";
+                document.querySelector("#compatible").style.color = "red";
+                return document.querySelector("#compatible").innerHTML = "Name field should not be empty!";
+                return false;
+            }else if(firstName.length <=5 || second.length <5){
+                document.querySelector("#compatible").style.display = "block";
+                document.querySelector("#compatible").style.color = "red";
+                return document.querySelector("#compatible").innerHTML = "Please enter full names!";
+            }else if (randomLove <= 49){
+                document.querySelector("#compatible").style.display = "block";
+                document.querySelector("#compatible").style.color = "red";
+                return document.querySelector("#compatible").innerHTML = "You are not compatible!";
+            }else{
+                document.querySelector("#compatible").style.display = "block";
+                document.querySelector("#compatible").style.color = "green";
+                return document.querySelector("#compatible").innerHTML = "You are compatible!";
+                window.print(this);
+            }
+            
+        }
+    </script>
+</body>
+</html>
